@@ -20,19 +20,19 @@ def create_simulation_layout(name, suffix='', input_drone=_POSITIONS[0], style=N
                 ),
 
                 html.Label('Vitesse maximale du drone (en km/h)'),
-                dcc.Input(id=f'speed{suffix}', value='80', type='text'),
+                dcc.Input(id=f'speed{suffix}', value=80, type='number'),
 
                 html.Label(u"Nombre de secondes d'accelération du drone :"),
-                dcc.Input(id=f'acc{suffix}', value='5', type='text'),
+                dcc.Input(id=f'acc{suffix}', value=5, type='number'),
 
                 html.Label(u"Vitesse verticale (en m/s) :"),
-                dcc.Input(id=f'vert-acc{suffix}', value='9', type='text'),
+                dcc.Input(id=f'vert-acc{suffix}', value=9, type='number'),
 
                 html.Label(u"Altitude de croisière (en m) :"),
-                dcc.Input(id=f'alt{suffix}', value='100', type='text'),
+                dcc.Input(id=f'alt{suffix}', value=100, type='number'),
 
                 html.Label(u"Nombre d'heures d'indispo après lancer :"),
-                dcc.Input(id=f'unavail_delta{suffix}', value='6', type='text'),
+                dcc.Input(id=f'unavail_delta{suffix}', value=6, type='number'),
 
                 # html.Label('Prise en compte du vent'),
                 # dcc.RadioItems(
@@ -56,22 +56,22 @@ def create_simulation_layout(name, suffix='', input_drone=_POSITIONS[0], style=N
                 html.H6('Operational parameters'),
 
                 html.Label(u"Retard au départ (en s) :"),
-                dcc.Input(id=f'dep_delay{suffix}', value='15', type='text'),
+                dcc.Input(id=f'dep_delay{suffix}', value=15, type='number'),
 
                 html.Label(u"Retard à l'arrivée (en s) :"),
-                dcc.Input(id=f'arr_delay{suffix}', value='15', type='text'),
+                dcc.Input(id=f'arr_delay{suffix}', value=15, type='number'),
 
                 html.Label(u"Décalage de détection inconscience/ACR (en s) :"),
-                dcc.Input(id=f'detec_delay{suffix}', value='104', type='text'),
+                dcc.Input(id=f'detec_delay{suffix}', value=104, type='number'),
 
                 html.Label(u"Taux de détection ACR à la prise d'appel (entre 0 et 1) :"),
-                dcc.Input(id=f'detec{suffix}', value='0.8', type='text'),
+                dcc.Input(id=f'detec{suffix}', value=.8, type='number', min=0, max=1),
 
                 html.Label(u"Odd ratio de la détection ACR voie publique à la prise d'appel :"),
-                dcc.Input(id=f'detec_VP{suffix}', value='0.15', type='text'),
+                dcc.Input(id=f'detec_VP{suffix}', value=.15, type='number'),
 
                 html.Label(u"Taux de témoins seuls ACR lieu privé (entre 0 et 1) :"),
-                dcc.Input(id=f'wit_detec{suffix}', value='0.58', type='text'),
+                dcc.Input(id=f'wit_detec{suffix}', value=.58, type='number', min=0, max=1),
 
             ], style={'flex': 1}),
 
